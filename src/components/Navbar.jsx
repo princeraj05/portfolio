@@ -1,30 +1,91 @@
-export default function Navbar() {
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+
+export default function Navbar(){
+
+const [open,setOpen] = useState(false);
+
+const links = [
+{ name:"Home", link:"#home"},
+{ name:"About", link:"#about"},
+{ name:"Resume", link:"#resume"},
+{ name:"Education", link:"#education"},
+{ name:"Skills", link:"#skills"},
+{ name:"Projects", link:"#projects"},
+{ name:"Certifications", link:"#certifications"},
+{ name:"Achievements", link:"#achievements"},
+{ name:"Contact", link:"#contact"}
+]
 
 return(
 
 <nav className="fixed top-0 w-full bg-[#0a0a0f]/80 backdrop-blur border-b border-purple-500/20 z-50">
 
-<div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-6 h-16">
+<div className="max-w-7xl mx-auto flex justify-between items-center px-6 h-16">
 
-<div className="text-lg md:text-xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
+{/* Logo */}
+
+<div className="text-xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
 PR.
 </div>
 
-<div className="flex gap-4 md:gap-8 text-xs md:text-sm text-gray-400 overflow-x-auto scrollbar-hide">
 
-<a href="#home" className="hover:text-purple-400 whitespace-nowrap">Home</a>
-<a href="#about" className="hover:text-purple-400 whitespace-nowrap">About</a>
-<a href="#resume" className="hover:text-purple-400 whitespace-nowrap">Resume</a>
-<a href="#education" className="hover:text-purple-400 whitespace-nowrap">Education</a>
-<a href="#skills" className="hover:text-purple-400 whitespace-nowrap">Skills</a>
-<a href="#projects" className="hover:text-purple-400 whitespace-nowrap">Projects</a>
-<a href="#certifications" className="hover:text-purple-400 whitespace-nowrap">Certifications</a>
-<a href="#achievements" className="hover:text-purple-400 whitespace-nowrap">Achievements</a>
-<a href="#contact" className="hover:text-purple-400 whitespace-nowrap">Contact</a>
+{/* Desktop Menu */}
+
+<div className="hidden md:flex gap-8 text-sm text-gray-400">
+
+{links.map((item)=>(
+<a 
+key={item.name}
+href={item.link}
+className="hover:text-purple-400 transition"
+>
+{item.name}
+</a>
+))}
+
+</div>
+
+
+{/* Mobile Menu Button */}
+
+<div className="md:hidden">
+
+<button onClick={()=>setOpen(!open)}>
+
+{open ? <X size={24}/> : <Menu size={24}/>}
+
+</button>
 
 </div>
 
 </div>
+
+
+{/* Mobile Menu */}
+
+{open && (
+
+<div className="md:hidden bg-[#0a0a0f] border-t border-purple-500/20">
+
+<div className="flex flex-col px-6 py-4 gap-4 text-gray-400">
+
+{links.map((item)=>(
+<a
+key={item.name}
+href={item.link}
+onClick={()=>setOpen(false)}
+className="hover:text-purple-400 transition"
+>
+{item.name}
+</a>
+))}
+
+</div>
+
+</div>
+
+)}
 
 </nav>
 
