@@ -88,7 +88,7 @@ linkedin.com/in/princeraj7479
 </div>
 
 <div className="bg-[#14141f] border border-purple-500/20 p-6 md:p-8 rounded-xl text-center hover:border-purple-500 transition">
-<h3 className="text-2xl md:text-3xl font-bold text-purple-400">6.61</h3>
+<h3 className="text-2xl md:text-3xl font-bold text-purple-400">6.83</h3>
 <p className="text-gray-400 text-sm md:text-base">CGPA (B.Tech)</p>
 </div>
 
