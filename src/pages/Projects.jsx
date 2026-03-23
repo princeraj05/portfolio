@@ -60,6 +60,17 @@ export default function Projects() {
           github="https://github.com/princeraj05"
           tech={["HTML", "Tailwind", "JavaScript", "PHP", "MySQL"]}
         />
+
+        <ProjectCard
+  title="ByteBite - Food Ordering Platform"
+  date="2026"
+  icon="🍔"
+  image={bytebiteImg} // apni image import kar lena
+  desc="Full-stack food ordering platform with user & admin panels, JWT authentication, cart system, and order management."
+  live="https://byte-bite-bdiak8b1d-princes-projects-d7be7534.vercel.app/"
+  github="https://github.com/princeraj05/ByteBite"
+  tech={["React", "Node.js", "Express", "MongoDB", "Tailwind", "JWT"]}
+/>
         
 
       </div>
