@@ -4,6 +4,7 @@ const ecoVisionImg = "/images/ecovision.png";
 const teachHubImg = "/images/teachhub.png";
 const instagramImg = "/images/instagram.png";
 const emailImg = "/images/Email.png"; // Fixed the variable name
+const ByteBiteImg = "/images/ByteBite.png"
 
 export default function Projects() {
   return (
@@ -65,7 +66,7 @@ export default function Projects() {
   title="ByteBite - Food Ordering Platform"
   date="2026"
   icon="🍔"
-  image={bytebiteImg} // apni image import kar lena
+  image={ByteBiteImg} // apni image import kar lena
   desc="Full-stack food ordering platform with user & admin panels, JWT authentication, cart system, and order management."
   live="https://byte-bite-bdiak8b1d-princes-projects-d7be7534.vercel.app/"
   github="https://github.com/princeraj05/ByteBite"
