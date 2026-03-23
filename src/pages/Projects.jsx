@@ -56,7 +56,7 @@ export default function Projects() {
           icon="📧"
           image={emailImg}
           desc="Responsive email management dashboard with authentication and profile system."
-          live=""
+          live="https://byte-bite-bdiak8b1d-princes-projects-d7be7534.vercel.app/"
           github="https://github.com/princeraj05"
           tech={["HTML", "Tailwind", "JavaScript", "PHP", "MySQL"]}
         />
