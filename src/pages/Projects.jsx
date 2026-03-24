@@ -25,7 +25,7 @@ export default function Projects() {
           image={ecoVisionImg}
           desc="AI powered platform converting waste into business ideas and sustainable products."
           live="https://swadeshi-waste-ai-final.vercel.app/"
-          github="https://github.com/princeraj05"
+          github="https://github.com/princeraj05/Swadeshi-Waste-AI-final"
           tech={["React", "Node.js", "MongoDB", "AI", "REST API"]}
         />
 
