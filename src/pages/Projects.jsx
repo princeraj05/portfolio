@@ -52,7 +52,7 @@ export default function Projects() {
         />
 
         <ProjectCard
-          title="Email Dashboard"
+          title="Inboxify"
           date="Mar 2025"
           icon="📧"
           image={emailImg}
