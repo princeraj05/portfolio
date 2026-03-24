@@ -36,7 +36,7 @@ export default function Projects() {
           image={teachHubImg}
           desc="Comprehensive school management platform with role-based dashboards for admins, teachers, and students. Features real-time communication, attendance, exams, and class operations."
           live="https://myschool-admin-panel.vercel.app/"
-          github="https://github.com/princeraj05/myschool-admin-panel"
+          github="https://github.com/princeraj05/TeachHub"
           tech={["React", "Node.js", "Express", "MongoDB", "JWT", "Socket.IO", "Tailwind CSS"]}
         />
 
@@ -47,7 +47,7 @@ export default function Projects() {
           image={instagramImg}
           desc="Full-stack Instagram clone with user authentication, photo uploads, likes, comments, follow system, and a responsive feed — built with the MERN stack."
           live="https://instagram-clone-mern-seven.vercel.app/"
-          github="https://github.com/princeraj05"
+          github="https://github.com/princeraj05/InstaNova"
           tech={["React", "Node.js", "Express", "MongoDB", "JWT", "Tailwind CSS"]}
         />
 
@@ -58,7 +58,7 @@ export default function Projects() {
           image={emailImg}
           desc="Responsive email management dashboard with authentication and profile system."
           live=""
-          github="https://github.com/princeraj05"
+          github="https://github.com/princeraj05/Inboxify"
           tech={["HTML", "Tailwind", "JavaScript", "PHP", "MySQL"]}
         />
 
