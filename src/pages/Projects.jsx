@@ -41,7 +41,7 @@ export default function Projects() {
         />
 
         <ProjectCard
-          title="Instagram Clone"
+          title="InstaNova"
           date="2026"
           icon="📸"
           image={instagramImg}
