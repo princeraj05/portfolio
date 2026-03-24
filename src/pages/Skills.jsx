@@ -76,8 +76,7 @@ export default function Skills() {
         { name: "Team Work", icon: "🤝" },
         { name: "Adaptability", icon: "🌊" },
         { name: "Leadership", icon: "🎯" },
-        { name: "DSA", icon: "🌲" },
-        { name: "OOP", icon: "📦" },
+        { name: "Time Management", icon: "⏰" },
       ],
     },
   ];
