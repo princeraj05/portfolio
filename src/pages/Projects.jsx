@@ -4,7 +4,11 @@ const ecoVisionImg = "/images/ecovision.png";
 const teachHubImg = "/images/teachhub.png";
 const instagramImg = "/images/instagram.png";
 const emailImg = "/images/Email.png"; // Fixed the variable name
-const ByteBiteImg = "/images/ByteBite.png"
+const greenGoImages = [
+  "/images/greengo_photo/image1.png",
+  "/images/greengo_photo/image2.png",
+  "/images/greengo_photo/image3.png"
+];
 
 export default function Projects() {
   return (
@@ -63,15 +67,15 @@ export default function Projects() {
         />
 
         <ProjectCard
-  title="ByteBite - Food Ordering Platform"
-  date="2026"
-  icon="🍔"
-  image={ByteBiteImg} // apni image import kar lena
-  desc="Full-stack food ordering platform with user & admin panels, JWT authentication, cart system, and order management."
-  live="https://byte-bite-bdiak8b1d-princes-projects-d7be7534.vercel.app/"
-  github="https://github.com/princeraj05/ByteBite"
-  tech={["React", "Node.js", "Express", "MongoDB", "Tailwind", "JWT"]}
-/>
+          title="GreenGo"
+          date="2026"
+          icon="🛵"
+          image={greenGoImages}
+          desc="Premium logistics and delivery app providing a seamless order placement experience, real-time dispatch tracking, secure payments with Razorpay, and comprehensive management dashboards."
+          live="https://green-go.in"
+          playstore="https://play.google.com/store/apps/details?id=com.greengo.india"
+          tech={["React Native", "React", "Node.js", "Express", "MongoDB", "Razorpay", "Tailwind CSS"]}
+        />
         
 
       </div>

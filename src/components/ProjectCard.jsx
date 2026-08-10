@@ -1,15 +1,76 @@
-export default function ProjectCard({ title, date, icon, image, desc, live, github, tech }) {
+import { useState } from "react";
+
+export default function ProjectCard({ title, date, icon, image, desc, live, github, playstore, tech }) {
+  const images = Array.isArray(image) ? image : (image ? [image] : []);
+  const [currentIdx, setCurrentIdx] = useState(0);
+
+  const handlePrev = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setCurrentIdx((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const handleNext = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setCurrentIdx((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
   return (
     <div className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
 
       {/* Project Screenshot */}
-      {image && (
-        <div className="w-full h-48 overflow-hidden">
+      {images.length > 0 && (
+        <div className="w-full h-48 overflow-hidden relative group">
           <img
-            src={image}
-            alt={`${title} screenshot`}
+            src={images[currentIdx]}
+            alt={`${title} screenshot ${currentIdx + 1}`}
             className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
           />
+          
+          {images.length > 1 && (
+            <>
+              {/* Left Arrow */}
+              <button
+                onClick={handlePrev}
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 focus:outline-none"
+                aria-label="Previous image"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-4 h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+              </button>
+
+              {/* Right Arrow */}
+              <button
+                onClick={handleNext}
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 focus:outline-none"
+                aria-label="Next image"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-4 h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </button>
+
+              {/* Bottom Dot Indicators */}
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+                {images.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      e.preventDefault();
+                      setCurrentIdx(idx);
+                    }}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      idx === currentIdx ? "bg-emerald-500 scale-110" : "bg-white/60 hover:bg-white"
+                    }`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
         </div>
       )}
 
@@ -95,6 +156,26 @@ export default function ProjectCard({ title, date, icon, image, desc, live, gith
                 <line x1="10" y1="14" x2="21" y2="3" />
               </svg>
               Live Demo
+            </a>
+          )}
+
+          {/* Play Store Link */}
+          {playstore && (
+            <a
+              href={playstore}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M3.609 1.814L13.792 12 3.61 22.186a1.722 1.722 0 0 1-.41-1.121V2.935c0-.441.15-.843.41-1.121zM14.97 10.82l2.766-2.768L3.609 1.34c.148-.152.348-.24.571-.24.321 0 .618.174.795.352l12.44 7.185a1.272 1.272 0 0 1 .555.856c-.006.124-.047.234-.117.327zm5.421.327l-2.072 2.074-2.83-2.83 2.83-2.83 2.072 2.074c.264.264.41.614.41.986 0 .372-.146.722-.41.986zM4.18 22.9c-.177.178-.474.352-.795.352-.223 0-.423-.088-.571-.24l13.946-8.033 2.21 2.21L4.18 22.9z" />
+              </svg>
+              Play Store
             </a>
           )}
 
